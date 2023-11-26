@@ -23,7 +23,7 @@ body {
     color: #fff; /* White text color */
     text-align: center; /* Center-align text */
     margin: 10px auto; /* Add space around each box and center it horizontally */
-    width: 50%; /* Adjust the width of the job boxes */
+    width: 55%; /* Adjust the width of the job boxes */
     display: block; /* Display job box as a block-level element */
     font-family: 'Metrophobic-Regular', sans-serif;
 }
