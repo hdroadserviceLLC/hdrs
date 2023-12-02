@@ -18,9 +18,9 @@ body {
 
 /* Style for the job boxes */
 .job-box {
-    background-color: #090B14; /* Dark gray background color */
+    background-color: #de9504; /* Dark gray background color */
     padding: 20px;
-    color: #fff; /* White text color */
+    color:#000;
     text-align: center; /* Center-align text */
     margin: 10px auto; /* Add space around each box and center it horizontally */
     width: 30%; /* Adjust the width of the job boxes */
@@ -78,15 +78,16 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
+    color: black;
   }
   
   .info li img {
     margin-right: 10px;
-    filter: brightness(0) invert(1); /* Make the images white */;
   }
-  
+   
   .info li span {
     display: inline-block;
+    padding: 10px;
   }
 
 /* Style for the nav bar */
