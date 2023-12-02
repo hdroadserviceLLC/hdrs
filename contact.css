@@ -90,6 +90,10 @@ body {
     padding: 10px;
   }
 
+  .job-box .info li span {
+    word-wrap: break-word;
+  }
+
 /* Style for the nav bar */
 .navbar {
     background-color: #333;
