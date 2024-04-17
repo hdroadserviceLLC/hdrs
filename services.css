@@ -62,12 +62,6 @@ body {
     display: block; /* Ensure that the image is treated as a block element */
 }
 
-.googleSheet iframe {
-  padding: 35px;
-  display: block;
-  margin: 0 auto;
-}
-
 /* Style for the nav bar */
 .navbar {
     background-color: #333;
