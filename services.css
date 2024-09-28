@@ -56,10 +56,11 @@ body {
 
 /* Style for the photos in the Sub-Divisions section */
 .sub-divisions img {
-    max-width: 1000px; /* Adjust the maximum width for consistency */
+    max-width: 1500px; /* Adjust the maximum width for consistency */
     height: auto; /* Maintain the image's aspect ratio */
     margin: 10px auto; /* Add space around each image and center them horizontally */
     display: block; /* Ensure that the image is treated as a block element */
+    padding-bottom: 150px;
 }
 
 /* Style for the nav bar */
@@ -104,6 +105,8 @@ footer {
     background-color: #3f3f3f;
     color: #d5d5d5;
     padding-top: 2rem;
+    bottom: 1;
+    height: 230px; /* adjust this value to match the height of your footer */
   }
   hr.light {
     border-top: 1px solid #d5d5d5;
