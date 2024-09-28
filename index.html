@@ -1,160 +1,192 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>HD Road Service</title>
-        <link rel="shortcut icon" type="image/x-icon" href="img/logo.jpeg" />
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-J3ZPYQ683H"></script>
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J3ZPYQ683H">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-        gtag('config', 'G-J3ZPYQ683H');
-        </script>
-	</head>
-	<body class="landing is-preload">
-		<div id="page-wrapper">
+  gtag('config', 'G-J3ZPYQ683H');
+</script>
+    <link rel="shortcut icon" type="image/x-icon" href="img/logo.jpeg" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HD Road Service</title>
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+	<link href="style.css" rel="stylesheet">
+</head>
+<body class="light-grey-bg">
 
-            <header id="header">
-                <div class="top-bar">
-                  <div class="container">
-                    <div class="contact-info">
-                      <span><i class="fas fa-phone"></i> Phone Number: 773-600-1472</span>
-                      <span><i class="far fa-calendar-alt"></i> Workdays: Monday - Sunday</span>
-                      <span><i class="far fa-clock"></i> Work Hours: 24/7 - 365 Days A Year!</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="main-header">
-                  <div class="container">
-                    <div class="logo">
-                      <img src="img/hdrsnewlogo.png" alt="HD Road Service" width="150px" height="150px">
-                    </div>
-                    <nav id="nav">
-                      <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="inventory.html">Inventory</a></li>
-                      </ul>
-                    </nav>
-                  </div>
-                </div>
-              </header>
-
-			<!-- Banner -->
-				<section id="banner">
-
-				</section>
-
-                <section id="main">
-                    <div class="container">
-                      <section class="box special who-we-are">
-                        <div class="content">
-                          <h2>Who are we</h2>
-                          <p>HDRS is a leader in the truck tire service industry, providing top-notch roadside assistance to keep commercial vehicles running smoothly. Our team of skilled and experienced technicians are available 24/7 to provide emergency tire service for a wide range of vehicles including long haul, regional, P&D, mixed service, single tandem axel vehicles, RV, coach buses, and dump trucks (tires only).</p>
-                          <p>We understand the importance of getting you back on the road quickly and safely, and our technicians are equipped with the latest tools and technology to get the job done efficiently and effectively. We pride ourselves on our quick response times and our commitment to providing excellent customer service.</p>
-                          <p>Our goal is to minimize any downtime for your vehicle and minimize any inconvenience to you. We are here to help you keep your business running. With our team of experts and our commitment to providing top-notch service, you can trust that HDRS will keep your vehicles moving forward.</p>
-                        </div>
-                        <div class="image">
-                          <img src="img/workerTireGun.PNG" alt="HDRS Team" width="600px" height="600px">
-                        </div>
-                      </section>
-                    </div>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-md navbar-light dark-bg sticky-top">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="#"><img src="img/hdrsgray.png" width="100" height="100"></a>	
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="/">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="contact.html">Contact</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="services.html">Services</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="inventory.html">Inventory</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
 
 
-                    <section class="box special features">
-                        <div class="features-row">
-                            <section>
-                                <span class="icon solid major fa-bolt accent2"></span>
-                                <h3>⚡ 24/7 Emergency Service</h3>
-                                <p>We're always on standby, 365 days a year! Whether it's late at night or during rush hour, our expert team is ready to get your fleet back on the road fast.</p>
-                            </section>
-                            <section>
-                                <span class="icon solid major fa-chart-area accent3"></span>
-                                <h3>🚛 Wide Range of Vehicles</h3>
-                                <p>From small delivery trucks to large semi-trailers, we cover it all. Our services are tailored to fit your unique fleet requirements.</p>
-                            </section>
-                        </div>
-                        <div class="features-row">
-                            <section>
-                                <span class="icon solid major fa-cloud accent4"></span>
-                                <h3>🚨 Quick Response Times</h3>
-                                <p>Time is money! That’s why we guarantee fast arrival times, keeping your business moving without unnecessary delays.</p>
-                            </section>
-                            <section>
-                                <span class="icon solid major fa-lock accent5"></span>
-                                <h3>🛠️ Expert Technicians</h3>
-                                <p>Our certified technicians are equipped with the latest technology to ensure your tires are serviced or replaced in record time and to the highest standards.</p>
-                            </section>
-                        </div>
-                    </section>
 
-        <!-- Google Maps Embed -->
-        <section id="google-maps">
-          <h2>Find Us Here:</h2>
-          <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2977.876433286577!2d-87.70595658742468!3d41.72318517113928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e3bf06a6cfdd9%3A0x1a1cd6f27567f917!2sHD%20ROAD%20SERVICE%20%7C%20Truck%20Tire%20Service!5e0!3m2!1sen!2sus!4v1727483220069!5m2!1sen!2sus"
-              width="800" 
-              height="800" 
-              style="border:0;" 
-              allowfullscreen="" 
-              loading="lazy" 
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-        </section>
-                    
-        <!-- Footer -->
-        <footer>
-            <div class="footer-content">
-                <div class="footer-section">
-                    <p>&copy; 2021 HD Road Service LLC</p>
-                </div>
-                <div class="footer-section">
-                    <h6>Quick Links</h6>
-                    <hr>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="inventory.html">Inventory</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h6>Contact Us</h6>
-                    <hr>
-                    <p>
-                        Evergreen Park, Illinois 60805<br>
-                        Phone: (708) 270-3201<br>
-                        Email: hdroadservice2021@gmail.com<br>
-                        PO Box (Mail): PO Box 42612, Evergreen Park, IL 60805
-                    </p>
-                </div>
-                <div class="footer-section">
-                    <h6>Follow Our Socials</h6>
-                    <hr>
-                    <ul class="social-links">
-                        <li><a href="https://www.instagram.com/hdroadservice2021/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
-                        <li><a href="https://www.youtube.com/@hdroadservice2021" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></li>
-                        <li><a href="https://www.tiktok.com/@hdroadservice" target="_blank"><i class="fas fa-video"></i> TikTok</a></li>
-                    </ul>
-                </div>
-            </div>
-        </footer>
-    </div>
 
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.dropotron.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-	</body>
+<!--- Image Slider -->
+<div id="slides" class="carousel slide" data-ride="carousel" data-aos="fade-up"
+		data-aos-offset="200"
+		data-aos-delay="50"
+		data-aos-duration="1000">
+		<ul class="carousel-indicators">
+			<li data-target="#slides" data-slide-to="0" class="active"></li>
+			<li data-target="#slides" data-slide-to="1"></li>
+			<li data-target="#slides" data-slide-to="2"></li>		
+			<li data-target="#slides" data-slide-to="3"></li>
+			<li data-target="#slides" data-slide-to="4"></li>
+	</ul>
+	
+	<div class="carousel-inner">
+		<div class="carousel-item active">
+			<img class="image" src="img/bg1.jpg" style="width: 100%; height: 1300px;">
+			<div class="carousel-caption">
+				<h1 class="display-2">HD Road Service</h1>
+			</div>
+		</div>
+		<div class="carousel-item">
+			<img class="image" src="img/bg2.jpg" style="width: 100%; height: 1000px;">
+		</div>
+		<div class="carousel-item">
+			<img class="image" src="img/bg3.jpg" style="width: 100%; height: 1000px;">
+		</div>
+		<div class="carousel-item">
+			<img class="image" src="img/bg4.jpg" style="width: 100%; height: 1000px;">
+		</div>
+		<div class="carousel-item">
+			<img class="image" src="img/bg5.jpg" style="width: 100%; height: 1000px;">
+		</div>
+	</div>
+</div>
+<br><br><br><br>
+
+<!--- Two Column Section -->
+<div class="container-fluid padding"data-aos="fade-up"
+		data-aos-offset="200"
+		data-aos-delay="50"
+		data-aos-duration="1000">
+	<div class="row padding">
+		<div class="col-md-12 col-lg-6">
+			<h2>Who are we</h2>
+			<p>HDRS is a leader in the truck tire service industry, providing top-notch roadside assistance to keep commercial vehicles running smoothly. Our team of skilled and experienced technicians are available 24/7 to provide emergency tire service for a wide range of vehicles including long haul, regional, P&D, mixed service, single tandem axel vehicles, RV, coach buses, and dump trucks (tires only).<br><br>We understand the importance of getting you back on the road quickly and safely, and our technicians are equipped with the latest tools and technology to get the job done efficiently and effectively.
+
+				We pride ourselves on our quick response times and our commitment to providing excellent customer service. Our goal is to minimize any downtime for your vehicle and minimize any inconvenience to you. We are here to help you keep your business running. With our team of experts and our commitment to providing top-notch service, you can trust that HDRS will keep your vehicles moving forward.</p>
+				<br>
+		</div>
+		<div class="col-lg-6">
+			<img src="img/workerTireGun.PNG" alt="Logo for HDRS" style="width:85%; height:550px;">
+		</div>
+	</div>
+</div>
+
+<hr class="my-4">
+
+<!--- Two Column Section -->
+<div class="container-fluid padding"data-aos="fade-up"
+		data-aos-offset="200"
+		data-aos-delay="50"
+		data-aos-duration="1000">
+	<div class="row padding">
+		<div class="col-md-12 text-center">
+			<h2>Truck Tire Catalogue</h2>
+			<p></p>
+				<br>
+		</div>
+		<div class="col-md-6">
+			<img src="img/tire1.png" alt="Logo for HDRS" style="width:100%; height:800px;">
+		</div>
+		<div class="col-md-6">
+			<img src="img/tire2.png" alt="Logo for HDRS" style="width:100%; height:800px;">
+		</div>
+		<div class="col-md-6">
+			<img src="img/morecatalog.png" alt="Logo for HDRS" style="width:100%; height:600px;">
+		</div>
+		<div class="col-md-6">
+			<img src="img/card1.png" alt="Logo for HDRS" style="width:100%; height:600px;">
+		</div>
+	</div>
+</div>
+
+
+
+<!--- Footer -->
+<footer class="dark-bg">
+	<div class="container-fluid py-3">
+	  <div class="row">
+		<div class="col-md-3">
+		  <p class="text-white">Copyright ©2021 HD Road Service LLC</p>
+		</div>
+		<div class="col-md-3">
+		  <h6 class="text-uppercase font-weight-bold">Quick Links</h6>
+		  <hr class="bg-secondary">
+		  <ul class="list-unstyled">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="services.html">Services</a></li>
+			<li><a href="contact.html">Contact</a></li>
+			<li><a href="inventory.html">Inventory</a></li>
+		  </ul>
+		</div>
+		<div class="col-md-3">
+		  <h6 class="text-uppercase font-weight-bold">Contact Us</h6>
+		  <hr class="bg-secondary">
+		  <p class="text-white">
+			Evergreen Park, Illinois 60805 <br>
+			Phone: (708) 270-3201 <br>
+			Email: hdroadservice2021@gmail.com <br>
+			PO Box (Mail):  PO Box 42612, Evergreen Park, IL 60805
+		  </p>
+		</div>
+		<div class="col-md-3">
+			<h6 class="text-uppercase font-weight-bold">Follow Our Socials</h6>
+			<hr class="bg-secondary">
+			<p class="text-white">
+			<a href="https://www.instagram.com/hdroadservice2021/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a> <br>
+			<a href="https://www.youtube.com/@hdroadservice2021" target="_blank"><i class="fab fa-youtube"></i> YouTube</a> <br>
+			<a href="https://www.tiktok.com/@hdroadservice" target="_blank"><i class="fas fa-video"></i> TikTok</a>
+			</p>
+		  </div>
+		  </div>
+		</div>
+	  </div>
+	</footer>
+  
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+AOS.init();
+</script>
+
+</body>
 </html>
