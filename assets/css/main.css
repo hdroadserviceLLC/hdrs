@@ -1342,7 +1342,7 @@
 footer {
     background-color: #333333;
     color: #ffffff;
-    padding: 40px 0;
+    padding: 1px 0;
     font-size: 18px;
     line-height: 1.6;
     margin-top: auto; /* Ensure footer stays at the bottom */
@@ -1361,13 +1361,14 @@ footer {
     max-width: 1500px;
     margin: 0 auto;
     padding: 0 20px;
-    flex-grow: 1; /* Take up available space */
+    flex-grow: 1;
+	padding-top: 20px;
   }
 
 .footer-section {
     flex: 1;
     margin-right: 40px;
-    min-width: 200px;
+    min-width: 250px;
 }
 
 .footer-section:last-child {
