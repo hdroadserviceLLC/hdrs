@@ -1,0 +1,20 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); /* Each column fits one 500px square */
+    gap: 10px; /* Adds some spacing between images */
+    padding: 10px;
+}
+
+.gallery img {
+    width: 100%; /* Images will automatically fill the grid item */
+    height: 500px; /* Fixed height to ensure images are square */
+    object-fit: cover; /* Ensures the images fill the square without distortion */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

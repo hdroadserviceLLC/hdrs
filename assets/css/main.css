@@ -641,7 +641,7 @@
 		#banner {
 			background-attachment: fixed;         
 			background-color: #666;               
-			background-image: url("images/bg1.jpg");  
+			background-image: url("../../img/marina.jpg");  
 			background-position: center center;  
 			background-repeat: no-repeat;         
 			background-size: cover;                /* Scales the image to cover the entire banner */
