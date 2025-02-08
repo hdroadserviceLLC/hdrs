@@ -534,8 +534,9 @@
   }
   
   .logo img {
-	max-height: 300px;
-  }
+    max-width: 100%;
+    height: auto;
+}
   
   #nav ul {
 	list-style: none;
@@ -563,16 +564,21 @@
 	font-weight: bold;
   }
   
-  @media (max-width: 768px) {
-	.top-bar, .main-header .container {
-	  flex-direction: column;
-	  text-align: center;
-	}
-	
-	.social-links, #nav, .cta-button {
-	  margin-top: 10px;
-	}
-  }
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #nav ul {
+        display: block;
+        text-align: center;
+    }
+
+    #nav ul li {
+        margin: 10px 0;
+    }
+}
 	.dropotron {
 		background: #fff;
 		border-radius: 6px;
@@ -1342,28 +1348,22 @@
 footer {
     background-color: #333333;
     color: #ffffff;
-    padding: 1px 0;
+    padding: 20px 0;
     font-size: 18px;
     line-height: 1.6;
-    margin-top: auto; /* Ensure footer stays at the bottom */
-    height: 30vh; /* Take up full viewport height */
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* Align content to bottom */
-	position: absolute;
-	bottom: 1;
-	width: 100%;
-  }
+    justify-content: center;
+    position: relative;
+}
   
-  .footer-content {
+.header-container,
+.footer-content {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    max-width: 1500px;
-    margin: 0 auto;
-    padding: 0 20px;
-    flex-grow: 1;
-	padding-top: 20px;
-  }
+}
 
 .footer-section {
     flex: 1;
