@@ -1,177 +1,162 @@
-/* Set the background color to black */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: #000; /* #000 represents black */
-    color: #fff; /* Text color */
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #4770b6;
 }
 
-/* Container for the entire layout */
-.container {
-    width: 100%;
-    max-width: 1850px; /* Adjust the maximum width as needed */
-    margin: 0 auto; /* Center the content horizontally */
-}
-
-/* Style for the job boxes container */
-.job-box-container {
-    text-align: center; /* Center-align job boxes */
-}
-
-/* Style for the job boxes */
-.job-box {
-    background-color: #090B14; /* Dark gray background color */
-    padding: 20px;
-    color: #fff; /* White text color */
-    text-align: center; /* Center-align text */
-    margin: 10px auto; /* Add space around each box and center it horizontally */
-    width: 30%; /* Adjust the width of the job boxes */
-    display: block; /* Display job box as a block-level element */
-    font-family: 'Metrophobic-Regular', sans-serif;
-}
-
-/* Style for the job titles */
-.job-box h2 {
-    font-size: 20px; /* Adjust the font size for job titles */
-    margin: 10px 0; /* Add space around the titles */
-}
-
-/* Style for the job descriptions */
-.job-box p {
-    font-size: 14px; /* Adjust the font size for descriptions */
-}
-
-/* Style for the Sub-Divisions section */
-.sub-divisions {
-    padding: 10px;
-    color: #fff; /* White text color */
-    text-align: center; /* Center align text */
-    margin-top: 20px; /* Add space between the core values and sub-divisions */
-    font-family: 'Metrophobic-Regular', sans-serif;
-}
-
-/* Style for the Sub-Divisions title */
-.sub-divisions h1 {
-    font-size: 54px; /* Adjust the font size */
-    margin-bottom: 20px; /* Add space below the title */
-}
-
-/* Style for the photos in the Sub-Divisions section */
-.sub-divisions img {
-    max-width: 500px; /* Adjust the maximum width for consistency */
-    height: auto; /* Maintain the image's aspect ratio */
-    margin: 10px auto; /* Add space around each image and center them horizontally */
-}
-
-/* Style for the nav bar */
+/* Navigation */
 .navbar {
-    background-color: #333;
-    padding: 15px;
+    background: #1a2b49;
+    padding: 1rem 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
-}
-
-.logo img {
-    width: 110px;
-    height: auto;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-}
-
-.nav-item {
-    margin-right: 25px;
-}
-
-.nav-link {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    font-size: 25px;
-}
-
-.nav-link:hover {
-    color: #ffcc00; /* Change color on hover */
-}
-
-.active .nav-link {
-    color: #ffcc00; /* Active link color */
-}
-
-
-
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
-
-html, body {
-    height: 100%;
-    width: 100%;
-    font-family: 'Poppins', sans-serif;
-    color: #222;
-}
-
-/* Styles for the navigation bar */
-.navbar {
-    padding: .8rem;
+    align-items: center;
 }
 
 .navbar-brand img {
-    width: 150px;
-    height: 70px;
+    max-width: 120px;
+    transition: transform 0.3s;
 }
 
-.navbar-nav li {
-    padding-right: 20px;
+.navbar-brand img:hover {
+    transform: scale(1.05);
+}
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin: 0 15px;
 }
 
 .nav-link {
-    font-size: 1.1em !important;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
-/* Styles for the footer */
+.nav-link:hover {
+    color: #ff6b00;
+}
+
+.nav-link.active {
+    color: #ff6b00;
+}
+
+/* Inventory Section */
+.inventory-section {
+    min-height: calc(100vh - 280px); /* Full height minus navbar and footer */
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #1a2b49;
+    font-size: 2.5rem;
+}
+
+.inventory-note {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.inventory-content {
+    display: flex;
+    justify-content: center;
+}
+
+.inventory-image {
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Footer */
 footer {
-    background-color: #3f3f3f;
-    color: #d5d5d5;
-    padding-top: 2rem;
-  }
-  hr.light {
-    border-top: 1px solid #d5d5d5;
-    width: 75%;
-    margin-top: .8rem;
+    background: #1a2b49;
+    color: white;
+    padding: 40px 20px;
+}
+
+.footer-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.footer-section h6 {
+    color: #ff6b00;
     margin-bottom: 1rem;
-  }
-  footer a {
-    color: #d5d5d5;
-  }
-  hr.light-100 {
-    border-top: 1px solid #d5d5d5;
-    width: 100%;
-    margin-top: .8rem;
-    margin-bottom: 1rem;
-  }
-  .footer-image img{
-    width: 150px;
-    height: 60px;
-  }
-  .fa-facebook {
-    color: #3b5998;
-  }
-  .fa-twitter {
-    color: #00aced;
-  }
-  .fa-google-plus-g {
-    color: #dd4b39;
-  }
-  .fa-instagram {
-    color: #517fa8;
-  }
-  .fa-youtube {
-    color: #bb0000;
-  }
-  
-  .fa-facebook:hover,
-  .fa-twitter:hover,
-  .fa-google-plus-g:hover,
-  .fa-instagram:hover,
-  .fa-youtube:hover {
-    color: #d5d5d5;
-  }
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin: 0.5rem 0;
+}
+
+.footer-section a:hover {
+    color: #ff6b00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    .nav-item {
+        margin: 0.5rem 0;
+    }
+
+    .inventory-image {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .inventory-note {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+}
