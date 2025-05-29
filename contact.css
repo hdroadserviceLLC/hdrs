@@ -8,7 +8,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   line-height: 1.6;
   color: #333;
-  background: #1a2b49;
+  background: #f8f9fa; /* Consistent lighter background */
 }
 
 /* Navigation */
@@ -61,56 +61,90 @@ body {
 
 /* Contact Section */
 .contact-section {
-  padding: 80px 0;
+  padding: 80px 20px; /* Consistent padding with other sections */
+  background: #ffffff; /* White background for the content area */
+  min-height: calc(100vh - 280px); /* Ensures content pushes footer down */
+  display: flex; /* Use flex to center inner container */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center vertically if content is short */
+}
+
+.contact-section .container {
+    width: 100%; /* Allows the container within the section to expand */
+    max-width: 1200px; /* Limits overall width */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
+    justify-content: center;
 }
 
 .section-title {
   text-align: center;
-  margin-bottom: 2rem;
-  color: #ffffff;
-  font-size: 2.5rem;
+  margin-bottom: 3rem; /* Increased margin for better separation */
+  color: #1a2b49; /* Dark blue for consistency with other pages */
+  font-size: 3rem; /* Larger and more prominent */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  width: 100%;
 }
 
-.contact-content {
-  display: flex;
-  justify-content: center;
+.contact-content-single { /* New class for single column layout */
+    display: flex;
+    justify-content: center; /* Center the contact info card */
+    width: 100%;
+    max-width: 600px; /* Control the max width of the centered card */
+    margin-bottom: 0; /* No margin needed if no elements below */
 }
 
 .contact-info {
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  width: 100%;
-  max-width: 500px;
-  text-align: center;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* Soft shadow */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content within the card */
+    text-align: center; /* Center text within the card */
+    width: 100%; /* Ensures it takes full width of its parent (.contact-content-single) */
 }
 
 .contact-logo {
-  max-width: 200px;
+  max-width: 180px; /* Slightly reduced logo size */
   margin-bottom: 1.5rem;
+}
+
+.contact-intro {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+    line-height: 1.7;
 }
 
 .info-list {
   list-style: none;
   padding: 0;
+  width: 100%; /* Ensure list takes full width for alignment */
 }
 
 .info-list li {
   display: flex;
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem; /* Increased spacing */
   text-align: left;
 }
 
-.info-list .icon img {
-  width: 24px;
-  height: 24px;
-  margin-right: 1rem;
+.info-list .icon {
+  font-size: 1.8rem; /* Font Awesome icon size */
+  color: #ff6b00; /* Orange color for icons */
+  margin-right: 1.2rem; /* Space between icon and text */
+  width: 30px; /* Fixed width for consistent alignment */
+  text-align: center;
 }
 
 .info-list span {
   color: #333;
+  font-size: 1.1rem;
 }
 
 .info-list a {
@@ -148,6 +182,7 @@ footer {
   text-decoration: none;
   display: block;
   margin: 0.5rem 0;
+  transition: color 0.3s;
 }
 
 .footer-section a:hover {
@@ -166,8 +201,34 @@ footer {
       margin: 0.5rem 0;
   }
 
+  .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+  }
+
   .contact-info {
       padding: 1.5rem;
+  }
+
+  .contact-intro {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+  }
+
+  .info-list li {
+      flex-direction: row; /* Keep row for smaller icons */
+      text-align: left;
+      margin-bottom: 1.2rem;
+  }
+  
+  .info-list .icon {
+      font-size: 1.5rem;
+      margin-right: 1rem;
+      width: 25px;
+  }
+  
+  .info-list span {
+      font-size: 1rem;
   }
 
   .footer-grid {
@@ -184,13 +245,7 @@ footer {
       font-size: 2rem;
   }
 
-  .info-list li {
-      flex-direction: column;
-      text-align: center;
-  }
-
-  .info-list .icon {
-      margin-right: 0;
-      margin-bottom: 0.5rem;
+  .contact-info {
+      padding: 1rem;
   }
 }

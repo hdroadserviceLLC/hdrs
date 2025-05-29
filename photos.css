@@ -59,27 +59,129 @@ body {
     color: #ff6b00;
 }
 
-/* Photos Gallery */
+/* Photos Gallery Section */
+.photos-section {
+    padding: 80px 20px; /* Consistent padding with other sections */
+    background: #ffffff; /* White background for the content area */
+    min-height: calc(100vh - 280px); /* Ensures content pushes footer down */
+    display: flex; /* Use flex to center inner container */
+    flex-direction: column;
+    align-items: center;
+}
+
+.photos-section .container {
+    width: 100%; /* Allows the container within the section to expand */
+    max-width: 1200px; /* Limits overall width */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
+    justify-content: center;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 1.5rem; /* Space between title and description */
+  color: #1a2b49;
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  width: 100%;
+}
+
+.section-description {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 3rem; /* Space before gallery grid */
+    max-width: 800px; /* Limit width for readability */
+}
+
+
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    gap: 10px;
-    padding: 20px;
-    margin-top: 80px; /* Offset for navbar */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjusted minmax for better responsiveness */
+    gap: 20px; /* Increased gap between images */
+    padding: 0; /* Removed overall padding as it's handled by section */
+    width: 100%; /* Ensures gallery spans full width of container */
 }
 
 .gallery img {
     width: 100%;
-    height: 400px;
+    height: 350px; /* Slightly adjusted height for consistency */
     object-fit: cover;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Added smooth transition */
+    cursor: pointer; /* Indicate clickable images */
 }
 
 .gallery img:hover {
     transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
 }
+
+/* Lightbox Modal */
+.lightbox-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2000; /* Sit on top */
+  padding-top: 60px; /* Location of the box (navbar height) */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  backdrop-filter: blur(5px); /* Optional: blur background for modern look */
+}
+
+.lightbox-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80%; /* Limit height to prevent image overflow */
+  object-fit: contain; /* Ensure image fits while maintaining aspect ratio */
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+.caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px; /* Allow space for longer captions */
+  font-size: 1.2rem;
+}
+
+/* Add Animation */
+@keyframes zoom {
+  from {transform: scale(0.1)} 
+  to {transform: scale(1)}
+}
+
+/* The Close Button */
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 
 /* Footer */
 footer {
@@ -106,6 +208,7 @@ footer {
     text-decoration: none;
     display: block;
     margin: 0.5rem 0;
+    transition: color 0.3s;
 }
 
 .footer-section a:hover {
@@ -124,25 +227,68 @@ footer {
         margin: 0.5rem 0;
     }
 
+    .photos-section {
+        padding: 60px 15px; /* Adjust padding for smaller screens */
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .section-description {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
     .gallery {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 8px;
-        padding: 15px;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Further adjusted minmax */
+        gap: 15px;
     }
 
     .gallery img {
-        height: 300px;
+        height: 280px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .lightbox-modal {
+        padding-top: 40px; /* Adjust padding for mobile nav */
+    }
+
+    .lightbox-content {
+        max-width: 95%;
+        max-height: 75%;
+    }
+
+    .caption {
+        font-size: 1rem;
+        height: auto; /* Allow caption height to adjust */
+    }
+
+    .close-button {
+        font-size: 30px;
+        top: 10px;
+        right: 20px;
     }
 }
 
 @media (max-width: 480px) {
     .gallery {
         grid-template-columns: 1fr;
-        gap: 5px;
-        padding: 10px;
+        gap: 10px;
     }
 
     .gallery img {
-        height: 250px;
+        height: 220px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 2rem;
     }
 }

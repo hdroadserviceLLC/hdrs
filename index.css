@@ -1,0 +1,393 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Navigation */
+.navbar {
+    background: #1a2b49;
+    padding: 1rem 2rem;
+    /* Removed position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; */
+    /* Now it will stay at the top but scroll with the page */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand img {
+    max-width: 120px;
+    transition: transform 0.3s;
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.05);
+}
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.nav-link {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #ff6b00;
+}
+
+/* Hero Slideshow */
+.hero-slideshow {
+    position: relative;
+    height: 600px;
+    /* Removed margin-top since navbar is no longer fixed */
+    overflow: hidden;
+}
+
+.slides {
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-text {
+    color: white;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    max-width: 600px;
+}
+
+.slide-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+}
+
+.slide-controls button {
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.slide-controls button:hover {
+    background: white;
+}
+
+/* About Section */
+.about-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2.5rem; /* Increased margin for better separation */
+    color: #1a2b49;
+    font-size: 2.5rem; /* Slightly larger for emphasis */
+    text-transform: uppercase; /* Added uppercase */
+    letter-spacing: 2px; /* Added letter spacing */
+}
+
+.about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem; /* Increased gap */
+    padding: 0 20px;
+    align-items: center; /* Vertically align items */
+}
+
+.about-text p {
+    margin-bottom: 1.2rem; /* Added margin to separate paragraphs */
+    line-height: 1.8; /* Increased line height for readability */
+}
+
+.about-text ul {
+    list-style: none; /* Remove default list style */
+    padding-left: 0; /* Remove default padding */
+    margin-bottom: 1.5rem; /* Margin below list */
+}
+
+.about-text ul li {
+    position: relative;
+    padding-left: 25px; /* Space for custom bullet */
+    margin-bottom: 0.8rem; /* Space between list items */
+}
+
+.about-text ul li::before {
+    content: '\2713'; /* Checkmark icon */
+    color: #ff6b00; /* Orange color for bullet */
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.about-img img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* More pronounced shadow */
+    transition: transform 0.3s ease-in-out; /* Added smooth transition for hover */
+}
+
+.about-img img:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
+}
+
+/* Partners Section */
+.partners-section {
+    padding: 80px 0;
+    background: #ffffff; /* Changed to white for contrast */
+}
+
+.partners-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Adjusted for flexibility */
+    gap: 2.5rem; /* Slightly increased gap */
+    padding: 0 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.partner-item {
+    text-align: center;
+    background: #f8f9fa; /* Light background for each partner item */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: all 0.3s ease-in-out;
+}
+
+.partner-item:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.partner-item img {
+    max-width: 120px; /* Slightly reduced size for consistency */
+    height: 80px; /* Fixed height for consistent visual alignment */
+    object-fit: contain; /* Ensures logo fits within bounds without distortion */
+    margin-bottom: 1rem;
+    filter: grayscale(100%); /* Grayscale by default */
+    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.partner-item img:hover {
+    filter: grayscale(0%); /* Full color on hover */
+    transform: scale(1.05);
+}
+
+.partner-item p {
+    color: #555;
+    font-weight: 600; /* Slightly bolder text */
+    font-size: 1.1rem;
+}
+
+/* Products and Certifications Section (Formerly Catalog Section) */
+.products-certifications-section {
+    padding: 80px 0;
+    background: #f8f9fa; /* Light background for differentiation */
+}
+
+.products-certifications-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted for flexibility */
+    gap: 2.5rem; /* Increased gap */
+    padding: 0 20px;
+}
+
+.grid-item {
+    background: #ffffff; /* White background for each item */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 25px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex; /* Use flexbox for content alignment */
+    flex-direction: column;
+    justify-content: space-between; /* Distribute space */
+    align-items: center;
+}
+
+.grid-item:hover {
+    transform: translateY(-8px); /* More pronounced lift on hover */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+.grid-item img {
+    max-width: 100%;
+    height: 200px; /* Set a fixed height for images */
+    object-fit: contain; /* Ensure images fit without cropping */
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.item-description {
+    font-size: 1.1rem;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Footer */
+footer {
+    background: #1a2b49;
+    color: white;
+    padding: 40px 20px;
+}
+
+.footer-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.footer-section h6 {
+    color: #ff6b00;
+    margin-bottom: 1rem;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin: 0.5rem 0;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #ff6b00;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    .about-img {
+        order: -1; /* Move image above text on smaller screens */
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    .nav-item {
+        margin: 0.5rem 0;
+    }
+
+    .hero-slideshow {
+        height: 400px;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .partners-grid,
+    .products-certifications-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted min-width for smaller screens */
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+    .hero-text p {
+        font-size: 1rem;
+    }
+    .partner-item img {
+        max-width: 100px;
+        height: 70px;
+    }
+}

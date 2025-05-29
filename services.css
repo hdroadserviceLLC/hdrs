@@ -8,7 +8,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   line-height: 1.6;
   color: #333;
-  background: #4770b6;
+  background: #f8f9fa; /* Changed to a lighter, more neutral background */
 }
 
 /* Navigation */
@@ -18,7 +18,7 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1200px; /* Still maintains a max-width for readability */
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -61,30 +61,182 @@ body {
 
 /* Services Section */
 .services-section {
-  min-height: calc(100vh - 280px); /* Full height minus navbar and footer */
-  display: flex;
+  padding: 80px 20px; /* Added horizontal padding to the section itself */
+  background: #ffffff; /* White background for the content area */
+  min-height: calc(100vh - 280px); /* Ensures content pushes footer down on shorter pages */
+  display: flex; /* Use flex to center inner container */
+  flex-direction: column;
   align-items: center;
-  padding: 40px 0;
 }
+
+.services-section .container {
+    width: 100%; /* Allows the container within the section to expand */
+    max-width: 1200px; /* Limits overall width */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
+    justify-content: center;
+}
+
 
 .section-title {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem; /* Increased margin for better separation */
   color: #1a2b49;
-  font-size: 2.5rem;
+  font-size: 3rem; /* Larger and more prominent */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  width: 100%; /* Ensures title spans the full width of the container */
 }
 
-.services-content {
-  display: flex;
-  justify-content: center;
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid for service cards */
+  gap: 2.5rem; /* Space between cards */
+  margin-bottom: 4rem; /* Space before CTA */
+  width: 100%; /* Ensures grid spans the full width of the container */
 }
 
-.services-image {
-  max-width: 600px;
-  height: auto;
+.service-card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  padding: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Soft shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left; /* Align text to the left within the card */
 }
+
+.service-card:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+}
+
+.service-card h3 {
+  color: #1a2b49;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.service-card p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.service-card ul {
+  list-style: none; /* Remove default bullet points */
+  padding-left: 0;
+  margin-top: 0.5rem;
+}
+
+.service-card ul li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 0.7rem;
+  color: #666;
+}
+
+.service-card ul li::before {
+  content: '\2713'; /* Checkmark icon */
+  color: #ff6b00; /* Orange color for checkmark */
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Pricing Grid */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem; /* Space after "Our Pricing" title */
+    margin-bottom: 4rem; /* Space before CTA */
+    width: 100%; /* Ensures grid spans the full width of the container */
+}
+
+.price-card {
+    background: #f8f9fa; /* Lighter background for pricing cards */
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.price-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.price-card h3 {
+    color: #1a2b49;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.price-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.price-card ul li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #e9ecef; /* Dashed line for subtle separation */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    color: #555;
+}
+
+.price-card ul li:last-child {
+    border-bottom: none; /* No border on the last item */
+}
+
+
+.services-cta {
+    text-align: center;
+    padding: 40px;
+    background: #1a2b49; /* Dark blue background for CTA */
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    width: 100%; /* Ensures CTA spans the full width of the container */
+}
+
+.services-cta p {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #ff6b00; /* Orange button */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 700;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background: #e65c00; /* Slightly darker orange on hover */
+    transform: translateY(-2px);
+}
+
 
 /* Footer */
 footer {
@@ -111,6 +263,7 @@ footer {
   text-decoration: none;
   display: block;
   margin: 0.5rem 0;
+  transition: color 0.3s;
 }
 
 .footer-section a:hover {
@@ -129,9 +282,18 @@ footer {
       margin: 0.5rem 0;
   }
 
-  .services-image {
-      max-width: 100%;
-      padding: 0 20px;
+  .services-grid,
+  .pricing-grid { /* Apply stacking to both grids */
+      grid-template-columns: 1fr; /* Stack cards on small screens */
+  }
+
+  .section-title {
+      font-size: 2.5rem;
+  }
+
+  .cta-button {
+      font-size: 1.1rem;
+      padding: 12px 25px;
   }
 
   .footer-grid {
@@ -146,5 +308,13 @@ footer {
 
   .section-title {
       font-size: 2rem;
+  }
+
+  .service-card h3 {
+      font-size: 1.5rem;
+  }
+
+  .services-cta p {
+      font-size: 1.2rem;
   }
 }

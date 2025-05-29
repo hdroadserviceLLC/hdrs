@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="photos.css">
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <a class="navbar-brand" href="#"><img src="img/hdrsnewlogo.png" alt="HD Road Service Logo"></a>
@@ -22,32 +21,42 @@
         </div>
     </nav>
 
-    <!-- Photos Gallery -->
-    <div class="gallery">
-        <img src="img/addon1.jpg" alt="Company Photo 1">
-        <img src="img/addon2.png" alt="Company Photo 2">
-        <img src="img/addon3.png" alt="Company Photo 3">
-        <img src="img/addon4.png" alt="Company Photo 4">
-        <img src="img/addon5.jpg" alt="Company Photo 5">
-        <img src="img/addon6.png" alt="Company Photo 6">
-        <img src="img/addon7.jpg" alt="Company Photo 7">
-        <img src="img/addon8.jpg" alt="Company Photo 8">
-        <img src="img/addon9.jpg" alt="Company Photo 9">
-        <img src="img/addon10.jpg" alt="Company Photo 10">
-        <img src="img/addon11.jpg" alt="Company Photo 11">
-        <img src="img/addon12.jpg" alt="Company Photo 12">
-        <img src="img/addon13.jpg" alt="Company Photo 13">
-        <img src="img/addon14.jpg" alt="Company Photo 14">
-        <img src="img/addon15.jpg" alt="Company Photo 15">
-        <img src="img/addon16.jpg" alt="Company Photo 16">
-        <img src="img/addon17.jpg" alt="Company Photo 17">
-        <img src="img/addon18.jpg" alt="Company Photo 18">
-        <img src="img/addon19.jpg" alt="Company Photo 19">
-        <img src="img/addon20.png" alt="Company Photo 20">
-        <img src="img/bg2.jpg" alt="Company Photo 21">
+    <section class="photos-section">
+        <div class="container">
+            <h1 class="section-title">Our Work in Action</h1>
+            <p class="section-description">Explore our gallery to see the quality and dedication we bring to every job.</p>
+            <div class="gallery">
+                <img src="img/addon1.jpg" alt="Emergency roadside tire change">
+                <img src="img/addon5.jpg" alt="Tires laying on the ground after being fixed">
+                <img src="img/addon6.png" alt="Mobile tire service van">
+                <img src="img/addon7.jpg" alt="CEO of HD Road Service working on a tire">
+                <img src="img/addon8.jpg" alt="Fixing a tire on a semi-truck in bad weather conditions">
+                <img src="img/addon9.jpg" alt="Team working on a fleet vehicle">
+                <img src="img/addon10.jpg" alt="Team working on a fleet vehicle">
+                <img src="img/addon11.jpg" alt="Team working on a fleet vehicle">
+                <img src="img/addon12.jpg" alt="Team working on a fleet vehicle">
+                <img src="img/addon13.jpg" alt="Team working on a fleet vehicle">
+                <img src="img/addon14.jpg" alt="Call out from Uhaul for tire service">
+                <img src="img/addon15.jpg" alt="Call out from Uhaul for tire service">
+                <img src="img/addon16.jpg" alt="Chicago Callout for a street cleaner">
+                <img src="img/addon17.jpg" alt="Expert roadside tire repair">
+                <img src="img/addon18.jpg" alt="Call out from Uhaul for tire service">
+                <img src="img/addon19.jpg" alt="Working under a truck chassis">
+                <img src="img/addon20.png" alt="Tire shop interior">
+                <img src="img/bg2.jpg" alt="HD Road Service team in action fixing a tow truck">
+                <img src="img/addon2.png" alt="Michelin logo">
+                <img src="img/addon3.png" alt="Sumitomo logo">
+                <img src="img/addon4.png" alt="Our Tire brans">
+            </div>
+        </div>
+    </section>
+
+    <div id="lightbox-modal" class="lightbox-modal">
+        <span class="close-button">&times;</span>
+        <img class="lightbox-content" id="img01">
+        <div id="caption" class="caption"></div>
     </div>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-grid">
             <div class="footer-section">
@@ -58,7 +67,6 @@
                 <a href="index.html">Home</a>
                 <a href="services.html">Services</a>
                 <a href="contact.html">Contact</a>
-                <a href="inventory.html">Inventory</a>
                 <a href="photos.html">Photos</a>
             </div>
             <div class="footer-section">
@@ -76,5 +84,37 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Get the modal, image, and caption elements
+        var modal = document.getElementById("lightbox-modal");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        var closeBtn = document.getElementsByClassName("close-button")[0];
+
+        // Get all gallery images
+        var images = document.querySelectorAll(".gallery img");
+
+        // Loop through images and add click event
+        images.forEach(function(img) {
+            img.onclick = function(){
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            }
+        });
+
+        // When the user clicks on <span> (x), close the modal
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Close the modal if user clicks outside of the image
+        modal.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
