@@ -97,6 +97,23 @@ body {
 }
 
 
+.gallery-group {
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+.gallery-group:last-child {
+    margin-bottom: 0;
+}
+
+.gallery-group h2 {
+    color: #1a2b49;
+    font-size: 1.55rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    width: 100%;
+}
+
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjusted minmax for better responsiveness */
@@ -118,6 +135,11 @@ body {
 .gallery img:hover {
     transform: scale(1.03);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.brand-gallery img {
+    object-fit: contain;
+    background: #f8f9fa;
 }
 
 /* Lightbox Modal */

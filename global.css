@@ -1,0 +1,285 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding-bottom: 0;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+}
+
+.navbar .container {
+    gap: 1.5rem;
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.nav-link.active {
+    color: #ff6b00;
+}
+
+.hero-text {
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+.nav-call-button,
+.hero-call-button,
+.hero-secondary-button,
+.sticky-call-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none;
+    line-height: 1;
+    white-space: nowrap;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+.nav-call-button {
+    background: #ff6b00;
+    color: #fff;
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+}
+
+.nav-call-button:hover,
+.hero-call-button:hover,
+.sticky-call-button:hover {
+    background: #e65c00;
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.75rem;
+    flex-wrap: wrap;
+}
+
+.hero-call-button {
+    background: #ff6b00;
+    color: #fff;
+    padding: 1rem 1.35rem;
+    font-size: 1rem;
+}
+
+.hero-secondary-button {
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    padding: calc(1rem - 2px) 1.35rem;
+    font-size: 1rem;
+}
+
+.hero-secondary-button:hover {
+    background: #fff;
+    color: #1a2b49;
+    transform: translateY(-1px);
+}
+
+.sticky-call-button {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 1500;
+    background: #ff6b00;
+    color: #fff;
+    padding: 1rem 1.2rem;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
+}
+
+.section-kicker {
+    text-align: center;
+    color: #ff6b00;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.trust-strip {
+    background: #1a2b49;
+    color: #fff;
+    padding: 1rem 20px;
+}
+
+.trust-strip .trust-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    text-align: center;
+}
+
+.trust-item strong {
+    display: block;
+    color: #ffb36d;
+    font-size: 1rem;
+}
+
+.trust-item span {
+    font-size: 0.92rem;
+}
+
+.area-section {
+    padding: 70px 20px;
+    background: #fff;
+}
+
+.area-content {
+    max-width: 1050px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.area-content p {
+    max-width: 780px;
+    margin: 0 auto 1.5rem;
+    color: #555;
+    font-size: 1.05rem;
+}
+
+.area-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    list-style: none;
+    padding: 0;
+}
+
+.area-list li {
+    border: 1px solid #dfe5ec;
+    border-radius: 6px;
+    padding: 0.65rem 0.9rem;
+    color: #1a2b49;
+    background: #f8f9fa;
+    font-weight: 600;
+}
+
+.contact-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+.contact-email-button {
+    color: #1a2b49;
+    border-color: #1a2b49;
+}
+
+.contact-email-button:hover {
+    background: #1a2b49;
+    color: #fff;
+}
+
+.footer-section p,
+.footer-section a {
+    font-size: 0.95rem;
+}
+
+.price-card ul li span {
+    padding-right: 1rem;
+}
+
+.price-card ul li strong {
+    color: #1a2b49;
+    font-size: 1.02rem;
+}
+
+.footer-section a[target="_blank"]::after {
+    content: "";
+}
+
+@media (max-width: 900px) {
+    .navbar .container {
+        flex-direction: column;
+    }
+
+    .navbar-actions {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .trust-strip .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding-bottom: 74px;
+    }
+
+    .navbar {
+        position: relative;
+    }
+
+    .navbar .container {
+        gap: 0.75rem;
+    }
+
+    .navbar-brand img {
+        max-width: 96px;
+    }
+
+    .navbar-nav {
+        width: 100%;
+        flex-direction: row !important;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        padding: 0 !important;
+    }
+
+    .nav-item {
+        margin: 0 !important;
+    }
+
+    .nav-link {
+        font-size: 0.78rem;
+    }
+
+    .nav-call-button {
+        display: none;
+    }
+
+    .sticky-call-button {
+        right: 12px;
+        left: 12px;
+        bottom: 12px;
+        padding: 1rem;
+    }
+
+    .hero-actions {
+        gap: 0.75rem;
+    }
+
+    .hero-call-button,
+    .hero-secondary-button {
+        width: 100%;
+        max-width: 260px;
+    }
+
+    .trust-strip .trust-grid {
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+}
