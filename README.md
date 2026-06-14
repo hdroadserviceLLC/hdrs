@@ -1,7 +1,20 @@
-# Website
-Website for the business HDRS - Hosting Free using Github
-I don't own the business (slothy) I just create the website
+# HD Road Service Website
 
-https://hdroadservicellc.github.io/hdrs/index.html
+Static business website for HD Road Service LLC, hosted with GitHub Pages.
 
-Ran/Managed by https://github.com/Im2Slothy
+## Structure
+
+- `index.html`, `services.html`, `contact.html`, `photos.html` - public site pages
+- `admin/` - password-protected content editor page
+- `assets/css/` - shared, page-specific, admin, and legacy stylesheets
+- `assets/js/site/` - public services content loader and Supabase config
+- `assets/js/admin.js` - admin editor behavior
+- `assets/data/services.json` - local fallback pricing/services content
+- `img/` - site images and brand assets
+- `deprecated-files/` - archived old pages kept for reference
+
+## Content Editing
+
+Pricing and services are managed through Supabase. Approved users can log in at `/admin/` and update the public services page without editing code.
+
+The Supabase URL and publishable key live in `assets/js/site/site-config.js`. Do not add any secret service-role keys to the repository.

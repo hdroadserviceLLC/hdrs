@@ -1,5 +1,5 @@
-import { getSupabaseClient, hasSupabaseConfig, loadPublicContent, saveContent } from "../js/content-api.js";
-import { ADMIN_EMAILS } from "../js/site-config.js";
+import { getSupabaseClient, hasSupabaseConfig, loadPublicContent, saveContent } from "./site/content-api.js";
+import { ADMIN_EMAILS } from "./site/site-config.js";
 
 const setupPanel = document.querySelector("#setup-panel");
 const loginPanel = document.querySelector("#login-panel");

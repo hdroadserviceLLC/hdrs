@@ -1,7 +1,6 @@
 import { CONTENT_KEY, SUPABASE_ANON_KEY, SUPABASE_URL } from "./site-config.js";
 
-const LOCAL_CONTENT_URL = "data/services.json";
-const ROOT_RELATIVE_CONTENT_URL = "../data/services.json";
+const LOCAL_CONTENT_URL = new URL("../../data/services.json", import.meta.url);
 
 export function hasSupabaseConfig() {
   return Boolean(SUPABASE_URL && SUPABASE_ANON_KEY);
@@ -16,7 +15,7 @@ export async function getSupabaseClient() {
   return createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 }
 
-export async function loadPublicContent({ fromAdmin = false } = {}) {
+export async function loadPublicContent() {
   const supabase = await getSupabaseClient();
 
   if (supabase) {
@@ -31,7 +30,7 @@ export async function loadPublicContent({ fromAdmin = false } = {}) {
     }
   }
 
-  const response = await fetch(fromAdmin ? ROOT_RELATIVE_CONTENT_URL : LOCAL_CONTENT_URL);
+  const response = await fetch(LOCAL_CONTENT_URL);
   if (!response.ok) {
     throw new Error("Could not load services content.");
   }
