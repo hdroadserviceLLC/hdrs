@@ -1,0 +1,105 @@
+{
+  "pricing": [
+    {
+      "title": "Call Out Fees",
+      "items": [
+        {
+          "name": "Appointments",
+          "price": "$100.00"
+        },
+        {
+          "name": "Emergency Service",
+          "price": "$200.00"
+        }
+      ]
+    },
+    {
+      "title": "Additional Services",
+      "items": [
+        {
+          "name": "Tire Disposal",
+          "price": "$9.00"
+        },
+        {
+          "name": "Valve Stems",
+          "price": "$5.00"
+        },
+        {
+          "name": "Studs",
+          "price": "$10.00"
+        },
+        {
+          "name": "Nuts",
+          "price": "$5.00"
+        }
+      ]
+    },
+    {
+      "title": "Labor Per Tire",
+      "items": [
+        {
+          "name": "Flat Repair",
+          "price": "$50.00"
+        },
+        {
+          "name": "Truck & Trailer",
+          "price": "$35.00"
+        },
+        {
+          "name": "Super Singles",
+          "price": "$60.00"
+        },
+        {
+          "name": "315/85R22.5",
+          "price": "$50.00"
+        },
+        {
+          "name": "385/65R22.5",
+          "price": "$55.00"
+        },
+        {
+          "name": "Lt Truck & Van",
+          "price": "$30.00"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "title": "24/7 Emergency Roadside Assistance",
+      "description": "When you're stranded, our rapid response team is ready to get you back on the road. We provide immediate assistance for tire issues anytime, anywhere. Serving Chicago, Evergreen Park, and all surrounding highways.",
+      "bullets": [
+        "Flat Tire Repair & Replacement",
+        "On-site Service",
+        "Quick Dispatch"
+      ]
+    },
+    {
+      "title": "Commercial Truck Tire Sales",
+      "description": "We offer a comprehensive selection of new and used truck tires from leading brands, suitable for various vehicle types and operational needs.",
+      "bullets": [
+        "New Tire Sales",
+        "Used Tire Sales",
+        "Wide Selection of Brands"
+      ]
+    },
+    {
+      "title": "Fleet Tire Management",
+      "description": "Optimize your fleet's performance and extend tire life with our expert tire management solutions. We help reduce downtime and operational costs.",
+      "bullets": [
+        "Tire Inspection & Maintenance",
+        "Pressure Checks",
+        "Tire Rotation & Balancing"
+      ]
+    },
+    {
+      "title": "Specialized Vehicle Tire Service",
+      "description": "Beyond standard commercial trucks, we are equipped to handle tire services for a range of specialized heavy-duty vehicles.",
+      "bullets": [
+        "RVs & Coach Buses",
+        "Semis & Dump Trucks",
+        "Trailers & Box Trucks"
+      ]
+    }
+  ]
+}

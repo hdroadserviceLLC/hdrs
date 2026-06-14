@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin | HD Road Service</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../img/hdrsnewlogo.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <main class="admin-shell">
+        <section class="admin-header">
+            <div>
+                <p class="eyebrow">HD Road Service</p>
+                <h1>Website Admin</h1>
+            </div>
+            <button class="secondary-button" id="sign-out-button" type="button" hidden>Sign Out</button>
+        </section>
+
+        <section class="panel" id="setup-panel">
+            <h2>Setup Needed</h2>
+            <p>This admin page needs Supabase connected before edits can be saved online. Public pages still use the local JSON fallback until then.</p>
+        </section>
+
+        <section class="panel" id="login-panel" hidden>
+            <h2>Sign In</h2>
+            <form id="login-form" class="stacked-form">
+                <label>
+                    Email
+                    <input id="email" type="email" autocomplete="email" required>
+                </label>
+                <label>
+                    Password
+                    <input id="password" type="password" autocomplete="current-password" required>
+                </label>
+                <button class="primary-button" type="submit">Sign In</button>
+                <p class="status-message" id="login-status" role="status"></p>
+            </form>
+        </section>
+
+        <section class="editor-layout" id="editor-panel" hidden>
+            <section class="panel">
+                <div class="panel-heading">
+                    <h2>Pricing</h2>
+                    <button class="secondary-button" id="add-pricing-group" type="button">Add Group</button>
+                </div>
+                <div id="pricing-editor"></div>
+            </section>
+
+            <section class="panel">
+                <div class="panel-heading">
+                    <h2>Services</h2>
+                    <button class="secondary-button" id="add-service" type="button">Add Service</button>
+                </div>
+                <div id="services-editor"></div>
+            </section>
+
+            <section class="save-bar">
+                <p class="status-message" id="save-status" role="status"></p>
+                <button class="primary-button" id="save-button" type="button">Save Changes</button>
+            </section>
+        </section>
+    </main>
+
+    <script type="module" src="admin.js"></script>
+</body>
+</html>
