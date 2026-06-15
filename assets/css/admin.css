@@ -33,7 +33,8 @@ button {
 .admin-header,
 .panel-heading,
 .save-bar,
-.row-actions {
+.row-actions,
+.save-actions {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -167,7 +168,7 @@ textarea {
 
 .two-column {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 160px auto;
+    grid-template-columns: minmax(0, 1fr) 160px auto auto auto;
     gap: 10px;
     align-items: end;
 }
@@ -181,6 +182,8 @@ textarea {
     font-weight: 700;
     line-height: 1.2;
     transition: transform 120ms ease, filter 120ms ease, box-shadow 120ms ease;
+    text-align: center;
+    text-decoration: none;
 }
 
 .primary-button:hover,
@@ -211,6 +214,10 @@ textarea {
     color: #9a1b1b;
 }
 
+.compact-button {
+    padding-inline: 12px;
+}
+
 .status-message {
     min-height: 1.4em;
     margin: 0;
@@ -224,6 +231,10 @@ textarea {
     left: max(16px, calc((100vw - 1040px) / 2));
     z-index: 10;
     box-shadow: 0 14px 32px rgba(26, 43, 73, 0.18);
+}
+
+.save-actions {
+    justify-content: flex-end;
 }
 
 @media (max-width: 720px) {
@@ -242,7 +253,8 @@ textarea {
     .admin-header,
     .panel-heading,
     .save-bar,
-    .row-actions {
+    .row-actions,
+    .save-actions {
         align-items: stretch;
         flex-direction: column;
     }

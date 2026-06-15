@@ -84,7 +84,7 @@ body {
   color: #1a2b49; /* Dark blue for consistency with other pages */
   font-size: 3rem; /* Larger and more prominent */
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 0;
   font-weight: 700;
   width: 100%;
 }
@@ -202,8 +202,12 @@ footer {
   }
 
   .section-title {
-      font-size: 2.5rem;
+      font-size: 2.1rem;
       margin-bottom: 2rem;
+  }
+
+  .contact-section {
+      padding: 46px 14px;
   }
 
   .contact-info {

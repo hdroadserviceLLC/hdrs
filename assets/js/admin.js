@@ -54,6 +54,17 @@ function button(label, className, onClick) {
     return element;
 }
 
+function moveItem(items, fromIndex, direction) {
+    const toIndex = fromIndex + direction;
+    if (toIndex < 0 || toIndex >= items.length) {
+        return false;
+    }
+
+    const [item] = items.splice(fromIndex, 1);
+    items.splice(toIndex, 0, item);
+    return true;
+}
+
 function cardHeading(text) {
     const heading = document.createElement("h3");
     heading.className = "card-heading";
@@ -88,7 +99,20 @@ function renderPricingEditor() {
                 textInput("Price", item.price, (value) => {
                     item.price = value;
                 }),
+                button("Up", "secondary-button compact-button", () => {
+                    if (moveItem(group.items, itemIndex, -1)) {
+                        renderPricingEditor();
+                    }
+                }),
+                button("Down", "secondary-button compact-button", () => {
+                    if (moveItem(group.items, itemIndex, 1)) {
+                        renderPricingEditor();
+                    }
+                }),
                 button("Remove", "danger-button", () => {
+                    if (!window.confirm(`Remove "${item.name || "this price item"}"?`)) {
+                        return;
+                    }
                     group.items.splice(itemIndex, 1);
                     renderPricingEditor();
                 })
@@ -99,11 +123,24 @@ function renderPricingEditor() {
         const actions = document.createElement("div");
         actions.className = "row-actions";
         actions.append(
+            button("Move Up", "secondary-button compact-button", () => {
+                if (moveItem(content.pricing, groupIndex, -1)) {
+                    renderPricingEditor();
+                }
+            }),
+            button("Move Down", "secondary-button compact-button", () => {
+                if (moveItem(content.pricing, groupIndex, 1)) {
+                    renderPricingEditor();
+                }
+            }),
             button("Add Item", "secondary-button", () => {
                 group.items.push({ name: "New Item", price: "$0.00" });
                 renderPricingEditor();
             }),
             button("Remove Group", "danger-button", () => {
+                if (!window.confirm(`Remove "${group.title || "this pricing group"}"?`)) {
+                    return;
+                }
                 content.pricing.splice(groupIndex, 1);
                 renderPricingEditor();
             })
@@ -141,8 +178,20 @@ function renderServicesEditor() {
                 textInput("Bullet", bullet, (value) => {
                     service.bullets[bulletIndex] = value;
                 }),
-                document.createElement("span"),
+                button("Up", "secondary-button compact-button", () => {
+                    if (moveItem(service.bullets, bulletIndex, -1)) {
+                        renderServicesEditor();
+                    }
+                }),
+                button("Down", "secondary-button compact-button", () => {
+                    if (moveItem(service.bullets, bulletIndex, 1)) {
+                        renderServicesEditor();
+                    }
+                }),
                 button("Remove", "danger-button", () => {
+                    if (!window.confirm(`Remove "${bullet || "this bullet"}"?`)) {
+                        return;
+                    }
                     service.bullets.splice(bulletIndex, 1);
                     renderServicesEditor();
                 })
@@ -153,11 +202,24 @@ function renderServicesEditor() {
         const actions = document.createElement("div");
         actions.className = "row-actions";
         actions.append(
+            button("Move Up", "secondary-button compact-button", () => {
+                if (moveItem(content.services, serviceIndex, -1)) {
+                    renderServicesEditor();
+                }
+            }),
+            button("Move Down", "secondary-button compact-button", () => {
+                if (moveItem(content.services, serviceIndex, 1)) {
+                    renderServicesEditor();
+                }
+            }),
             button("Add Bullet", "secondary-button", () => {
                 service.bullets.push("New detail");
                 renderServicesEditor();
             }),
             button("Remove Service", "danger-button", () => {
+                if (!window.confirm(`Remove "${service.title || "this service"}"?`)) {
+                    return;
+                }
                 content.services.splice(serviceIndex, 1);
                 renderServicesEditor();
             })

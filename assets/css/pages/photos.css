@@ -83,7 +83,7 @@ body {
   color: #1a2b49;
   font-size: 3rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 0;
   font-weight: 700;
   width: 100%;
 }
@@ -130,6 +130,11 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Added smooth transition */
     cursor: pointer; /* Indicate clickable images */
+}
+
+.gallery img:focus {
+    outline: 3px solid #ffb36d;
+    outline-offset: 4px;
 }
 
 .gallery img:hover {
@@ -190,6 +195,8 @@ body {
   position: absolute;
   top: 15px;
   right: 35px;
+  border: 0;
+  background: transparent;
   color: #f1f1f1;
   font-size: 40px;
   font-weight: bold;
@@ -254,7 +261,7 @@ footer {
     }
 
     .section-title {
-        font-size: 2.5rem;
+        font-size: 2.1rem;
     }
 
     .section-description {
@@ -268,7 +275,7 @@ footer {
     }
 
     .gallery img {
-        height: 280px;
+        height: 260px;
     }
 
     .footer-grid {
@@ -311,6 +318,6 @@ footer {
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
 }

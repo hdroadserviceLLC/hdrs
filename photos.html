@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Our Work | Commercial Truck Tire Repair Chicago</title>
+    <meta name="description" content="See real HD Road Service roadside tire repair, fleet service, commercial truck tire work, and tire brands from jobs across Chicago and Northwest Indiana.">
     <link rel="shortcut icon" type="image/x-icon" href="img/hdrsnewlogo.png" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/pages/photos.css">
@@ -33,47 +34,47 @@
             <div class="gallery-group">
                 <h2>Roadside Service</h2>
                 <div class="gallery">
-                    <img src="img/addon1.jpg" alt="Emergency roadside tire change">
-                    <img src="img/addon6.png" alt="HD Road Service mobile tire service van">
-                    <img src="img/addon7.jpg" alt="HD Road Service technician working on a tire">
-                    <img src="img/addon8.jpg" alt="Semi-truck tire repair during bad weather">
-                    <img src="img/addon17.jpg" alt="Roadside tire repair close-up">
-                    <img src="img/addon19.jpg" alt="Technician working under a truck chassis">
+                    <img src="img/addon1.jpg" alt="Emergency roadside tire change" loading="lazy" decoding="async">
+                    <img src="img/addon6.png" alt="HD Road Service mobile tire service van" loading="lazy" decoding="async">
+                    <img src="img/addon7.jpg" alt="HD Road Service technician working on a tire" loading="lazy" decoding="async">
+                    <img src="img/addon8.jpg" alt="Semi-truck tire repair during bad weather" loading="lazy" decoding="async">
+                    <img src="img/addon17.jpg" alt="Roadside tire repair close-up" loading="lazy" decoding="async">
+                    <img src="img/addon19.jpg" alt="Technician working under a truck chassis" loading="lazy" decoding="async">
                 </div>
             </div>
 
             <div class="gallery-group">
                 <h2>Fleet and Commercial Work</h2>
                 <div class="gallery">
-                    <img src="img/addon9.jpg" alt="Commercial fleet tire service">
-                    <img src="img/addon10.jpg" alt="Fleet vehicle tire service">
-                    <img src="img/addon11.jpg" alt="Commercial tire work on a fleet vehicle">
-                    <img src="img/addon12.jpg" alt="Truck tire service for a commercial vehicle">
-                    <img src="img/addon13.jpg" alt="Heavy-duty vehicle tire repair">
-                    <img src="img/addon14.jpg" alt="U-Haul tire service call">
-                    <img src="img/addon15.jpg" alt="U-Haul roadside tire service">
-                    <img src="img/addon16.jpg" alt="Chicago street cleaner tire service call">
-                    <img src="img/addon18.jpg" alt="Commercial tire service call">
-                    <img src="img/bg2.jpg" alt="HD Road Service team fixing a tow truck">
+                    <img src="img/addon9.jpg" alt="Commercial fleet tire service" loading="lazy" decoding="async">
+                    <img src="img/addon10.jpg" alt="Fleet vehicle tire service" loading="lazy" decoding="async">
+                    <img src="img/addon11.jpg" alt="Commercial tire work on a fleet vehicle" loading="lazy" decoding="async">
+                    <img src="img/addon12.jpg" alt="Truck tire service for a commercial vehicle" loading="lazy" decoding="async">
+                    <img src="img/addon13.jpg" alt="Heavy-duty vehicle tire repair" loading="lazy" decoding="async">
+                    <img src="img/addon14.jpg" alt="U-Haul tire service call" loading="lazy" decoding="async">
+                    <img src="img/addon15.jpg" alt="U-Haul roadside tire service" loading="lazy" decoding="async">
+                    <img src="img/addon16.jpg" alt="Chicago street cleaner tire service call" loading="lazy" decoding="async">
+                    <img src="img/addon18.jpg" alt="Commercial tire service call" loading="lazy" decoding="async">
+                    <img src="img/bg2.jpg" alt="HD Road Service team fixing a tow truck" loading="lazy" decoding="async">
                 </div>
             </div>
 
             <div class="gallery-group">
                 <h2>Tires and Brands</h2>
                 <div class="gallery brand-gallery">
-                    <img src="img/addon5.jpg" alt="Commercial tires after service">
-                    <img src="img/addon20.png" alt="Tire shop interior">
-                    <img src="img/addon2.png" alt="Michelin tire brand logo">
-                    <img src="img/addon3.png" alt="Sumitomo tire brand logo">
-                    <img src="img/addon4.png" alt="Commercial tire brands carried by HD Road Service">
+                    <img src="img/addon5.jpg" alt="Commercial tires after service" loading="lazy" decoding="async">
+                    <img src="img/addon20.png" alt="Tire shop interior" loading="lazy" decoding="async">
+                    <img src="img/addon2.png" alt="Michelin tire brand logo" loading="lazy" decoding="async">
+                    <img src="img/addon3.png" alt="Sumitomo tire brand logo" loading="lazy" decoding="async">
+                    <img src="img/addon4.png" alt="Commercial tire brands carried by HD Road Service" loading="lazy" decoding="async">
                 </div>
             </div>
         </div>
     </section>
 
-    <div id="lightbox-modal" class="lightbox-modal">
-        <span class="close-button">&times;</span>
-        <img class="lightbox-content" id="img01">
+    <div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-labelledby="caption" hidden>
+        <button class="close-button" type="button" aria-label="Close image preview">&times;</button>
+        <img class="lightbox-content" id="img01" alt="">
         <div id="caption" class="caption"></div>
     </div>
 
@@ -105,7 +106,7 @@
         </div>
     </footer>
 
-    <a class="sticky-call-button" href="tel:+17082703201">Call 24/7: (708) 270-3201</a>
+    <a class="sticky-call-button" href="tel:+17082703201" aria-label="Call HD Road Service 24/7 at 708 270 3201">Call 24/7: (708) 270-3201</a>
 
     <script>
         // Get the modal, image, and caption elements
@@ -114,29 +115,55 @@
         var captionText = document.getElementById("caption");
         var closeBtn = document.getElementsByClassName("close-button")[0];
 
+        function openModal(img) {
+            modal.hidden = false;
+            modal.style.display = "block";
+            modalImg.src = img.src;
+            modalImg.alt = img.alt;
+            captionText.textContent = img.alt;
+            closeBtn.focus();
+        }
+
+        function closeModal() {
+            modal.hidden = true;
+            modal.style.display = "none";
+            modalImg.src = "";
+        }
+
         // Get all gallery images
         var images = document.querySelectorAll(".gallery img");
 
         // Loop through images and add click event
         images.forEach(function(img) {
+            img.tabIndex = 0;
             img.onclick = function(){
-                modal.style.display = "block";
-                modalImg.src = this.src;
-                captionText.innerHTML = this.alt;
+                openModal(this);
+            }
+            img.onkeydown = function(event) {
+                if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    openModal(this);
+                }
             }
         });
 
         // When the user clicks on <span> (x), close the modal
         closeBtn.onclick = function() {
-            modal.style.display = "none";
+            closeModal();
         }
 
         // Close the modal if user clicks outside of the image
         modal.onclick = function(event) {
             if (event.target == modal) {
-                modal.style.display = "none";
+                closeModal();
             }
         }
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape" && !modal.hidden) {
+                closeModal();
+            }
+        });
     </script>
 </body>
 </html>
