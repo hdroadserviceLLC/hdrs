@@ -5,7 +5,9 @@
 body {
     margin: 0;
     min-height: 100vh;
-    background: #f5f7fa;
+    background:
+        linear-gradient(180deg, rgba(255, 107, 0, 0.08), rgba(255, 255, 255, 0) 220px),
+        #f4f7fb;
     color: #233044;
     font-family: 'Montserrat', sans-serif;
 }
@@ -18,12 +20,14 @@ textarea {
 
 button {
     cursor: pointer;
+    min-height: 46px;
+    touch-action: manipulation;
 }
 
 .admin-shell {
-    width: min(1120px, calc(100% - 32px));
+    width: min(1040px, calc(100% - 32px));
     margin: 0 auto;
-    padding: 32px 0 96px;
+    padding: 24px 0 112px;
 }
 
 .admin-header,
@@ -38,6 +42,21 @@ button {
 
 .admin-header {
     margin-bottom: 24px;
+    padding: 14px 0;
+}
+
+.admin-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+}
+
+.admin-logo {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+    flex: 0 0 auto;
 }
 
 .eyebrow {
@@ -45,7 +64,7 @@ button {
     color: #ff6b00;
     font-size: 0.78rem;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 0;
     text-transform: uppercase;
 }
 
@@ -59,9 +78,12 @@ p {
 h1 {
     margin-bottom: 0;
     color: #1a2b49;
+    font-size: 2.25rem;
+    line-height: 1.05;
 }
 
 h2 {
+    margin-bottom: 0;
     color: #1a2b49;
     font-size: 1.25rem;
 }
@@ -71,8 +93,17 @@ h2 {
     background: #fff;
     border: 1px solid #dfe5ec;
     border-radius: 8px;
-    box-shadow: 0 8px 22px rgba(26, 43, 73, 0.08);
+    box-shadow: 0 10px 24px rgba(26, 43, 73, 0.08);
     padding: 22px;
+}
+
+.panel {
+    overflow: hidden;
+}
+
+#login-panel {
+    max-width: 460px;
+    margin: 24px auto 0;
 }
 
 .editor-layout {
@@ -92,6 +123,7 @@ label {
     display: grid;
     gap: 6px;
     color: #415169;
+    font-size: 0.9rem;
     font-weight: 700;
 }
 
@@ -100,21 +132,37 @@ textarea {
     width: 100%;
     border: 1px solid #cfd8e3;
     border-radius: 6px;
-    padding: 12px;
+    padding: 13px 12px;
     color: #233044;
     background: #fff;
+    font-size: 16px;
+    line-height: 1.35;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #ff6b00;
+    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.14);
+    outline: none;
 }
 
 textarea {
-    min-height: 110px;
+    min-height: 132px;
     resize: vertical;
 }
 
 .editable-card {
     border: 1px solid #e0e6ee;
     border-radius: 8px;
-    padding: 16px;
+    padding: 18px;
     background: #fbfcfe;
+}
+
+.card-heading {
+    margin: 0;
+    color: #1a2b49;
+    font-size: 1rem;
 }
 
 .two-column {
@@ -129,13 +177,28 @@ textarea {
 .danger-button {
     border: 0;
     border-radius: 6px;
-    padding: 11px 14px;
+    padding: 12px 16px;
     font-weight: 700;
+    line-height: 1.2;
+    transition: transform 120ms ease, filter 120ms ease, box-shadow 120ms ease;
+}
+
+.primary-button:hover,
+.secondary-button:hover,
+.danger-button:hover {
+    filter: brightness(0.96);
+}
+
+.primary-button:active,
+.secondary-button:active,
+.danger-button:active {
+    transform: translateY(1px);
 }
 
 .primary-button {
     background: #ff6b00;
     color: #fff;
+    box-shadow: 0 8px 16px rgba(255, 107, 0, 0.22);
 }
 
 .secondary-button {
@@ -144,7 +207,7 @@ textarea {
 }
 
 .danger-button {
-    background: #f1f3f6;
+    background: #fff1f1;
     color: #9a1b1b;
 }
 
@@ -156,13 +219,26 @@ textarea {
 
 .save-bar {
     position: fixed;
-    right: max(16px, calc((100vw - 1120px) / 2));
+    right: max(16px, calc((100vw - 1040px) / 2));
     bottom: 16px;
-    left: max(16px, calc((100vw - 1120px) / 2));
+    left: max(16px, calc((100vw - 1040px) / 2));
     z-index: 10;
+    box-shadow: 0 14px 32px rgba(26, 43, 73, 0.18);
 }
 
 @media (max-width: 720px) {
+    body {
+        background:
+            linear-gradient(180deg, rgba(255, 107, 0, 0.12), rgba(255, 255, 255, 0) 170px),
+            #f4f7fb;
+    }
+
+    .admin-shell {
+        width: min(100% - 20px, 520px);
+        padding-top: 12px;
+        padding-bottom: 142px;
+    }
+
     .admin-header,
     .panel-heading,
     .save-bar,
@@ -171,7 +247,64 @@ textarea {
         flex-direction: column;
     }
 
+    .admin-header {
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+
+    .admin-title {
+        gap: 10px;
+    }
+
+    .admin-logo {
+        width: 48px;
+        height: 48px;
+    }
+
+    .eyebrow {
+        font-size: 0.68rem;
+    }
+
+    h1 {
+        font-size: 1.72rem;
+    }
+
+    .panel,
+    .save-bar {
+        padding: 16px;
+    }
+
+    .panel-heading {
+        gap: 12px;
+    }
+
+    .editor-layout {
+        gap: 14px;
+    }
+
+    .editable-card {
+        padding: 14px;
+    }
+
     .two-column {
         grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .two-column > span {
+        display: none;
+    }
+
+    .primary-button,
+    .secondary-button,
+    .danger-button {
+        width: 100%;
+    }
+
+    .save-bar {
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+        gap: 10px;
     }
 }

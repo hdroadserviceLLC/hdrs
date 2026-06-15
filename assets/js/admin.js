@@ -54,6 +54,13 @@ function button(label, className, onClick) {
     return element;
 }
 
+function cardHeading(text) {
+    const heading = document.createElement("h3");
+    heading.className = "card-heading";
+    heading.textContent = text;
+    return heading;
+}
+
 function renderPricingEditor() {
     pricingEditor.replaceChildren();
     pricingEditor.className = "editor-list";
@@ -62,6 +69,7 @@ function renderPricingEditor() {
         const card = document.createElement("section");
         card.className = "editable-card";
         card.append(
+            cardHeading(`Pricing Group ${groupIndex + 1}`),
             textInput("Group Title", group.title, (value) => {
                 group.title = value;
             })
@@ -114,6 +122,7 @@ function renderServicesEditor() {
         const card = document.createElement("section");
         card.className = "editable-card";
         card.append(
+            cardHeading(`Service ${serviceIndex + 1}`),
             textInput("Service Title", service.title, (value) => {
                 service.title = value;
             }),
