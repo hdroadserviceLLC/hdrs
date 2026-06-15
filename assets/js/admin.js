@@ -1,5 +1,4 @@
 import { getSupabaseClient, hasSupabaseConfig, loadPublicContent, saveContent } from "./site/content-api.js";
-import { ADMIN_EMAILS } from "./site/site-config.js";
 
 const setupPanel = document.querySelector("#setup-panel");
 const loginPanel = document.querySelector("#login-panel");
@@ -18,10 +17,6 @@ let content = {
 };
 
 const supabase = await getSupabaseClient();
-
-function isApprovedAdmin(email) {
-    return ADMIN_EMAILS.includes((email || "").toLowerCase());
-}
 
 function setVisibility(mode) {
     setupPanel.hidden = mode !== "setup";
@@ -177,9 +172,8 @@ async function loadEditor() {
 
 async function getApprovedUser() {
     const { data, error } = await supabase.auth.getUser();
-    const email = data?.user?.email;
 
-    if (error || !isApprovedAdmin(email)) {
+    if (error || !data?.user) {
         return null;
     }
 
@@ -196,13 +190,6 @@ loginForm.addEventListener("submit", async (event) => {
 
     if (error) {
         loginStatus.textContent = "Sign in failed. Check the email and password.";
-        return;
-    }
-
-    const user = await getApprovedUser();
-    if (!user) {
-        await supabase.auth.signOut();
-        loginStatus.textContent = "This email is not allowed to edit the website.";
         return;
     }
 
