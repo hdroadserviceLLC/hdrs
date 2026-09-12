@@ -1,0 +1,55 @@
+name: Keep Supabase active
+
+on:
+  schedule:
+    # Run away from the top of the hour, when scheduled Actions are busiest.
+    - cron: "23 9 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  keepalive:
+    name: Query public site content
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Send daily database activity
+        env:
+          # This is the same public URL/key shipped to browsers in site-config.js.
+          SUPABASE_URL: https://cekaagljjuaijjvxgvgp.supabase.co
+          SUPABASE_PUBLISHABLE_KEY: sb_publishable_qWLaorfmAdvU3SJ4Nvsz7A_aSlwTNd6
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          endpoint="${SUPABASE_URL}/rest/v1/site_content"
+
+          for request_number in 1 2 3; do
+            response_file="$(mktemp)"
+            status="$({ curl \
+              --silent \
+              --show-error \
+              --retry 3 \
+              --retry-all-errors \
+              --connect-timeout 15 \
+              --max-time 30 \
+              --output "${response_file}" \
+              --write-out "%{http_code}" \
+              --get "${endpoint}" \
+              --data-urlencode "select=content_key" \
+              --data-urlencode "content_key=eq.services" \
+              --header "apikey: ${SUPABASE_PUBLISHABLE_KEY}" \
+              --header "Authorization: Bearer ${SUPABASE_PUBLISHABLE_KEY}"; } || true)"
+
+            if [[ "${status}" != "200" ]] || ! grep -q '"content_key":"services"' "${response_file}"; then
+              echo "Supabase keepalive request ${request_number} failed with HTTP ${status}."
+              rm -f "${response_file}"
+              exit 1
+            fi
+
+            rm -f "${response_file}"
+          done
+
+          echo "Supabase responded successfully to all three database queries."

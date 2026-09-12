@@ -18,3 +18,5 @@ Static business website for HD Road Service LLC, hosted with GitHub Pages.
 Pricing and services are managed through Supabase. Approved users can log in at `/admin/` and update the public services page without editing code.
 
 The Supabase URL and publishable key live in `assets/js/site/site-config.js`. Do not add any secret service-role keys or admin allow-lists to the repository. Admin permissions should be enforced with Supabase row-level security policies, not browser-side JavaScript.
+
+The `Keep Supabase active` GitHub Actions workflow queries the public `services` row three times each day. This provides regular database activity for the free Supabase project without changing pricing data. It can also be run manually from the repository's Actions tab.
